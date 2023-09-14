@@ -14,7 +14,7 @@ public class StackLL {
         static Node head = null;
 
         public  boolean isEmpty() {
-            return head==null;
+            return head == null;
         }
         //push
         public void push(int data) {

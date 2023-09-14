@@ -22,13 +22,13 @@ public class StacksUsingArray {
         }
 
         public void push(int x) {
-            size++;
+            size++;    //-1 -> 0->x
             arr[size] = x;
         }
 
         public int pop() {
-            if(size != -1)  {
-                int val = arr[size];
+            if(size != -1)  {                //  -1  0  1  2
+                int val = arr[size];             //  4 ,5 ,7
                 size--;
                 return val;
             }

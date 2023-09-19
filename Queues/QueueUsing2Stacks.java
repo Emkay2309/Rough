@@ -7,13 +7,13 @@ import java.util.Stack;
 public class QueueUsing2Stacks {
     public static void main(String[] args) {
         Queue q = new Queue();
-        q.add(1);
-        q.add(2);
-        q.add(3);
+        q.push(1);
+        q.push(2);
+        q.push(3);
 
         while(!q.isEmpty()) {
             System.out.println(q.peek());
-            q.remove();
+            q.poll();
         }
     }
     public static class Queue{
@@ -25,7 +25,7 @@ public class QueueUsing2Stacks {
         }
 
         //add O(N)
-        public static void add(int data) {
+        public static void push(int data) {
             while(!s1.isEmpty()) {
                 s2.push(s1.pop());
             }
@@ -35,7 +35,7 @@ public class QueueUsing2Stacks {
             }
         }
         //remove
-        public static int remove() {
+        public static int poll() {
             if(isEmpty()) {
                 return -1;
             }

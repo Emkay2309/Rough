@@ -16,9 +16,10 @@ public class StackLL {
         public  boolean isEmpty() {
             return head == null;
         }
+
         //push
         public void push(int data) {
-            Node newNode = new Node(data);
+            Node newNode = new Node(data);  //3
             if(isEmpty()) {
                 head = newNode;
                 return;

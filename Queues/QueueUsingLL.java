@@ -47,7 +47,7 @@ public class QueueUsingLL {
             return front;
         }
 
-        //peeek
+        //peek
         public static int peek() {
             if(isEmpty()) {
                 System.out.println("empty queue");

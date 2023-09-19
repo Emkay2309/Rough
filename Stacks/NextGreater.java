@@ -12,14 +12,16 @@ public class NextGreater {
         Stack <Integer> s = new Stack<>();
 
         for(int i=A.length-1 ; i>=0 ; i--) {
-            while(!s.isEmpty() && A[s.peek()] <= A[i]) {
+
+            while(!s.isEmpty() && A[s.peek()] <= A[i]) {   // 3 <= 1
                 s.pop();
             }
+
             if(s.isEmpty()) {
                 ans[i] = -1;
             }
             else {
-                ans[i] = A[s.peek()];
+                ans[i] = A[s.peek()];      // -1, 3
             }
             s.push(i);
         }

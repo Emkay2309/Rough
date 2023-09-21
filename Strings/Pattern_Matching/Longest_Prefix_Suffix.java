@@ -7,6 +7,8 @@ public class Longest_Prefix_Suffix {
         String s = "aabacaaba";
         int [] lps = lps(s);
         System.out.println(Arrays.toString(lps));
+        lps = solve(s);
+        System.out.println(Arrays.toString(lps));
     }
 
     private static int[] lps(String s) {
@@ -25,6 +27,32 @@ public class Longest_Prefix_Suffix {
                 x = ans[x-1];
             }
             ans[i] = x+1;
+        }
+        return ans;
+    }
+
+    private static int [] solve(String s) {
+        int n = s.length();
+
+        int i = 1;
+        int len = 0;
+        int ans [] = new int [n];
+
+        while( i < n)  {
+            if(s.charAt(i) == s.charAt(len))  {
+                len++;
+                ans[i] = len;
+                i++;
+            }
+            else {
+                if(len != 0)  {
+                    len = ans[len-1];
+                }
+                else {
+                    ans[i] = 0;
+                    i++;
+                }
+            }
         }
         return ans;
     }

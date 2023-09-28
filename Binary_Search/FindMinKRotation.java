@@ -16,21 +16,17 @@ public class FindMinKRotation {
         int high = arr.length-1;
 
         while( low <= high) {
-
             //Calculate Mid
             int mid = (low + high)/2;
 
             //Check what part is sorted
-
             if(arr[low] <= arr[high] ){
-
                 if(arr[low] < ans) {
                     ans = arr[low];
                     index = low;
                 }
                 return index;
             }
-
 
             //Check if left part is sorted
             if( arr[low] <= arr[mid]) {
@@ -39,8 +35,6 @@ public class FindMinKRotation {
                     ans = arr[low];
                     index = low;
                 }
-
-
                 low = mid+1;
             }
             //else right is sorted
@@ -50,7 +44,6 @@ public class FindMinKRotation {
                     ans = arr[mid];
                     index = mid;
                 }
-
                 high = mid-1;
             }
         }

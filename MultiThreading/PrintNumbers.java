@@ -8,7 +8,7 @@ public class PrintNumbers {
     public static void main(String[] args) {
         Thread evenThread = new Thread( () -> {
             while( number <= n) {
-                synchronized (lock) {
+                synchronized (lock) {  //sync parent
                     if(number % 2 == 0) {
                         System.out.print(number + " ");
                         number++;
@@ -16,7 +16,7 @@ public class PrintNumbers {
                     }
                     else {
                         try{
-                            lock.wait();
+                            lock.wait();  //for 1 it will wait
                         }
                         catch(Exception e) {
                             e.printStackTrace();
@@ -28,10 +28,10 @@ public class PrintNumbers {
         Thread oddThread = new Thread( () -> {
             while(number <= n) {
                 synchronized (lock) {
-                    if(number % 2 != 0) {
+                    if(number % 2 != 0) {  // 1
                         System.out.print(number + " ");
-                        number++;
-                        lock.notify();
+                        number++;  //2
+                        lock.notify();  //Wakes up even threads that is waiting on this object's monitor
                     }
                     else {
                         try{

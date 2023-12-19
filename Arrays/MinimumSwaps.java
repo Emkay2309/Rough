@@ -7,11 +7,10 @@ public class MinimumSwaps {
         System.out.println(solve(A,B));
     }
     public static int solve(int [] A, int B) {
-        int ans = 0;
 
         int c=0;
-        for(int i=0 ; i<A.length ; i++) {
-            if(A[i] <= B){
+        for (int j : A) {
+            if (j <= B) {
                 c++;
             }
         }
@@ -21,7 +20,7 @@ public class MinimumSwaps {
                 temp++;
             }
         }
-        ans = c-temp;
+        int ans = c-temp;
 
         for(int i=c ; i<A.length ; i++) {
             if(A[i]<=B) {

@@ -53,10 +53,10 @@ public class TreeSymetrical {
         if(A == null  &&  B == null) {
             return true;
         }
-        if(A == null & B != null) {
+        if(A == null && B != null) {
             return false;
         }
-        if(B == null & A != null) {
+        if(B == null && A != null) {
             return false;
         }
         return (fun(A.left , B.right) && fun(A.right , B.left) ) ? true : false;

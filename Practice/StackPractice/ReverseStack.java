@@ -8,9 +8,7 @@ public class ReverseStack {
         s.push(1);
         s.push(2);
         s.push(3);
-
         reverse(s);
-
         while(!s.isEmpty()) {
             System.out.println(s.pop());
         }
@@ -32,4 +30,6 @@ public class ReverseStack {
         pushAtBottom(s , data);
         s.push(top);
     }
+
+
 }

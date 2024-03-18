@@ -11,14 +11,14 @@ import java.io.InputStream;
 // ~Access a file - fie doesn't exist - no permission to open a file
 // ~ Multithreading
 
-// JAVA --> In java exception is a special type of Object.It will contain information about the event that triggered exception.
+// JAVA --> In java exception is a special type of Objects.It will contain information about the event that triggered exception.
 
 
                             //                    Throwable
                             //                 /             \
                             //              Error           Exception
                             //             /              /           \
-                            //        Out of memory    Runtime         IO exception,Checked,
+                            //        Out of memory    Runtime         IO exception,Checked
                             //                       (Unchecked)
 
 // Errors : -- Scenario that are not possible to anticipate and recover from them.
@@ -46,7 +46,7 @@ import java.io.InputStream;
 // throws---> This method can throw an exception.
 
 public class ExceptionHandling {
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         int a = 5;
         int b = 2;
         int result = 0;
@@ -67,8 +67,6 @@ public class ExceptionHandling {
         catch(IOException err) {
             System.out.println("file not found " + err );
         }
-
-
     }
 
     public static void findFile(String name)  throws IOException {

@@ -4,6 +4,14 @@ import java.util.HashMap;
 
 public class UniquePoint {
     public static void main(String[] args) {
+
+
+        SingletonCheck c = SingletonCheck.getSingletonInstance();
+        SingletonCheck c2 = SingletonCheck.getSingletonInstance();
+
+        System.out.println(c==c2);
+
+
         Point P1 = new Point(4,2);
         Point P2 = new Point(0,5);
         Point P3 = new Point(6,98);
